@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Natpacan's Web</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+      * {
+        font-family: "Righteous", cursive;
+      }
+      table thead tr th:first-child {
+        border-radius: 13px 0 0 0;
+      }
+      table thead tr th:last-child {
+        border-radius: 0 13px 0 0;
+      }
+      table tbody tr:last-child th {
+        border-radius: 0 0 0 13px;
+      }
+      table tbody tr:last-child td:last-child {
+        border-radius: 0 0 13px 0;
+      }
+      table tbody tr:last-child,
+      tbody tr:last-child th,
+      tbody tr:last-child td {
+        border: none;
+      }
+      table tbody {
+        cursor: pointer;
+      }
+      .headtitle span {
+        color: orangered;
+      }
+      .img {
+        width: 10em;
+        height: 10em;
+      }
+      strong {
+        font-size: 1.2em;
+        color: orangered;
+      }
+    </style>
+  </head>
+  <body class="bg-black bg-opacity-25">
+    <div class="container">
+      <h1 class="headtitle text-center fw-bold my-5">
+        <span>M</span>obile and Web Application Development
+      </h1>
+      
+
+      <table class="table table-dark table-striped table-hover w-75 m-auto" style="border-radius: 13px; box-shadow: 0px 13px 27px -5px black;">
+        <thead class="fs-4">
+          <tr>
+            <th>#</th>
+            <th>Work Name</th>
+            <th>Date(submit)</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="table-row-click" data-href="work1.html">
+            <th>1</th>
+            <td>jQuery Matching Game</td>
+            <td>8/12/2022</td>
+          </tr>
+          <tr class="table-row-click" data-href="work2.html">
+            <th>2</th>
+            <td>VueJS & VuetifyJS Matching Game</td>
+            <td>28/12/2022</td>
+          </tr>
+          <tr class="table-row-click" data-href="work3.html">
+            <th>3</th>
+            <td>AngularJS Matching Game</td>
+            <td>29/12/2022</td>
+          </tr>
+          <tr class="table-row-click" data-href="work4.html">
+            <th>4</th>
+            <td>ReactJS Matching Game</td>
+            <td>8/1/2023</td>
+          </tr>
+          <tr class="table-row-click" data-href="work5.html">
+            <th>5</th>
+            <td>Web VR 360 (Panorama)</td>
+            <td>21/1/2023</td>
+          </tr>
+          <tr class="table-row-click" data-href="">
+            <th>6</th>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr class="table-row-click" data-href="">
+            <th>7</th>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+        </tbody>
+      </table>
+      <footer class="mt-4 p-2">
+        <div
+          class="d-flex w-75 m-auto justify-content-between border-3 border-top pt-4"
+        >
+          <img
+            src="./profile.JPG"
+            class="img rounded-circle shadow"
+            alt="profile"
+          />
+          <div class="my-auto">
+            <h3><strong>By</strong> 643020369-0 Natpacan Sribanhad</h3>
+            <h5>Bachelor of Science Program in Information Technology</h5>
+            <h5>College of Computing, Khon kaen University</h5>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <!-- bootstrap -->
+
+    <!-- jQuery -->
+    <script>
+      // table-row-click
+      $(document).ready(function ($) {
+        $(".table-row-click").click(function () {
+          window.document.location = $(this).data("href");
+        });
+      });
+    </script>
+  </body>
+</html>

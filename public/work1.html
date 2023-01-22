@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work1: JQuery and Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai&display=swap');
+        *{
+            font-family: 'IBM Plex Sans Thai', sans-serif;
+        }
+
+        #view2 img{
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+        }
+        
+        #view2 .col{
+            padding: 1em;
+            
+        }
+        
+        #view1 h1{
+            font-size: 3.5em;
+        }
+        .container{
+            height: 100vh;
+        }
+        .card{
+            height: 80vh;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container d-flex">
+        <div class="card my-auto w-100 shadow">
+            <div class="card-header bg-primary text-light fs-3 fw-bold text-center">Work1: JQuery and Bootstrap</div>
+            <div class="card-body text-center d-flex">
+                <div id="view1" class="m-auto">
+                    <h1 class="mb-4 p-4">เกมจับคู่รูปภาพ</h1>
+                    <button id="playBtn" class="btn btn-success px-4 fs-5 fw-bold">เริ่ม</button>
+                    <a href="index.html" class="btn btn-danger px-4 fs-5 fw-bold">กลับ</a>
+                </div>
+                <div id="view2" class="m-auto w-100">
+                    <div class="row">
+                        <div class="col"><img src="./work1_img/0.png" id="img1" alt=""></div>
+                        <div class="col"><img src="./work1_img/0.png" id="img2" alt=""></div>
+                        <div class="col"><img src="./work1_img/0.png" id="img3" alt=""></div>
+                        <div class="col"><img src="./work1_img/0.png" id="img4" alt=""></div>
+                        <div class="col"><img src="./work1_img/0.png" id="img5" alt=""></div>
+                        <div class="col"><img src="./work1_img/0.png" id="img6" alt=""></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><img src="./work1_img/0.png" id="img7" alt=""></div>
+                        <div class="col"><img src="./work1_img/0.png" id="img8" alt=""></div>
+                        <div class="col"><img src="./work1_img/0.png" id="img9" alt=""></div>
+                        <div class="col"><img src="./work1_img/0.png" id="img10" alt=""></div>
+                        <div class="col"><img src="./work1_img/0.png" id="img11" alt=""></div>
+                        <div class="col"><img src="./work1_img/0.png" id="img12" alt=""></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><img src="./work1_img/0.png" id="img13" alt=""></div>
+                        <div class="col"><img src="./work1_img/0.png" id="img14" alt=""></div>
+                        <div class="col"><img src="./work1_img/0.png" id="img15" alt=""></div>
+                        <div class="col"><img src="./work1_img/0.png" id="img16" alt=""></div>
+                        <div class="col"><img src="./work1_img/0.png" id="img17" alt=""></div>
+                        <div class="col"><img src="./work1_img/0.png" id="img18" alt=""></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><img src="./work1_img/0.png" id="img19" alt=""></div>
+                        <div class="col"><img src="./work1_img/0.png" id="img20" alt=""></div>
+                        <div class="col"><img src="./work1_img/0.png" id="img21" alt=""></div>
+                        <div class="col"><img src="./work1_img/0.png" id="img22" alt=""></div>
+                        <div class="col"><img src="./work1_img/0.png" id="img23" alt=""></div>
+                        <div class="col"><img src="./work1_img/0.png" id="img24" alt=""></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><img src="./work1_img/0.png" id="img25" alt=""></div>
+                        <div class="col"><img src="./work1_img/0.png" id="img26" alt=""></div>
+                        <div class="col"><img src="./work1_img/0.png" id="img27" alt=""></div>
+                        <div class="col"><img src="./work1_img/0.png" id="img28" alt=""></div>
+                        <div class="col"><img src="./work1_img/0.png" id="img29" alt=""></div>
+                        <div class="col"><img src="./work1_img/0.png" id="img30" alt=""></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><img src="./work1_img/0.png" id="img31" alt=""></div>
+                        <div class="col"><img src="./work1_img/0.png" id="img32" alt=""></div>
+                        <div class="col"><img src="./work1_img/0.png" id="img33" alt=""></div>
+                        <div class="col"><img src="./work1_img/0.png" id="img34" alt=""></div>
+                        <div class="col"><img src="./work1_img/0.png" id="img35" alt=""></div>
+                        <div class="col"><img src="./work1_img/0.png" id="img36" alt=""></div>
+                    </div>
+                    <button id="stopBtn" class="btn btn-danger mt-4 px-4 fs-5 fw-bold">เลิกเล่น</button>
+
+                </div>
+                <div id="view3" class="m-auto">
+                    <h1 class="mb-4 p-4">ยินดีด้วย คุณชนะแล้ว!!!</h1>
+                    <button id="okBtn" class="btn btn-danger  px-4 fs-5 fw-bold">ตกลง</button>
+                </div>
+
+            </div>
+            <div class="card-footer text-center">
+                
+                Mobile and Web Development <br>
+                Bachelor of Science Program in Information Technology,
+                College of Computing,
+                Khon kaen University
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            $("#view2").hide();
+            $("#view3").hide();
+            $("#playBtn").click(startGame);
+            $("#stopBtn").click(stopGame);
+            $("#okBtn").click(goHome);
+            $("#view2 img").click(imgclick);
+        });
+
+        var cards_opened=[];
+        var cards_count=36;
+
+        function imgclick(){
+            if($(this).attr("src")!="./work1_img/0.png") return;
+
+            if(cards_opened.length<2){
+               var s=$(this).attr("srcx");
+                $(this).attr("src",s);
+                cards_opened.push(this); 
+                if(cards_opened.length==2){
+                    setTimeout(checkCard,500);
+                }
+            }
+        }
+        function checkCard(){
+            var a=cards_opened[0];
+            var b=cards_opened[1];
+            cards_opened=[];
+            if($(a).attr("srcx")==$(b).attr("srcx")){
+                $(a).hide();
+                $(b).hide();
+                cards_count-=2
+            }else{
+                $(a).attr("src","./work1_img/0.png");
+                $(b).attr("src","./work1_img/0.png");
+            }
+            if(cards_count==0){
+                $("#view2").hide();
+                $("#view3").show();
+            }
+        }
+
+        function startGame(){
+            $("#view1").hide();
+            $("#view2").show();
+            $("img").show();
+            $(".card").css("height", "auto");
+            cards_opened=[];
+            cards_count=36;
+            shuffer();
+        }
+        function stopGame(){
+            $("#view1").show();
+            $("#view2").hide();
+            $(".card").css("height", "80vh");
+        }
+        function goHome(){
+            $("#view1").show();
+            $("#view3").hide();
+            $(".card").css("height", "80vh");
+        }
+        function shuffer(){
+            var list=[];
+            for(var i=1;i<=18;i++){
+                list.push(i);
+                list.push(i);
+            }
+            for(var i=1;i<100;i++){
+                var a=Math.round(Math.random()*35);
+                var b=Math.round(Math.random()*35);
+                var t=list[a];
+                list[a]=list[b];
+                list[b]=t;
+            }
+            console.log(list)
+            for(var i=0;i<36;i++){
+                $("#img"+(i+1)).attr("src","./work1_img/0.png");
+                $("#img"+(i+1)).attr("srcx","./work1_img/"+list[i]+".png");
+            }
+        }
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <title>work4 : ReactJS</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+        *{
+            font-family: 'Raleway', sans-serif;
+        }
+        .container-fluid{
+            min-height: 100vh;
+            /* max-height: 100%; */
+            
+        }
+    </style>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+  </head>
+  <body>
+        <div id="app"></div>     
+
+    <script type="text/babel">
+        class Game extends React.Component {
+            title = "work4 : เกมจับคู่รูปภาพด้วย ReactJS";
+            footer = "ณัฐปคัลภ์ ศรีบ้านแฮด สาขา IT" ;
+            cards_opened = [];
+            cards_count = 36 ;
+            constructor(){
+                super();
+                this.state = {
+                    page:0
+                }
+            }
+            render(){
+                 var p;
+                 if(this.state.page==0 ) p = <Page0 game={this} />;
+                 if(this.state.page==1 ) p = <Page1 game={this} cards={this.state.cards} />;
+                 if(this.state.page==2 ) p = <Page2 game={this} />;
+
+                 
+                return <div class="container-fluid p-5 d-flex bg-light" >
+                    <div class="card m-auto border-0 shadow">
+                        <div class="card-header bg-white border-2 border-bottom border-dark text-center fw-bold fs-5">{this.title}</div>
+                        <div class="card-body">{p}</div>
+                        <div class="card-footer bg-white border-2 border-top border-dark text-center fw-bold">{this.footer}</div>  
+                    </div>
+                </div> ;
+                
+            }
+
+            start(){
+
+                this.setState({page:1});
+
+                var cards = [];
+                this.cards_opened = [];
+                this.cards_count = 36;
+
+                for(var i=1;i<=18;i++){
+                    cards.push(<Card t={i} game={this} />);
+                    cards.push(<Card t={i} game={this} />);
+                }
+                for(var i=0;i<100;i++){
+                    var a = Math.round(Math.random()*35);
+                    var b = Math.round(Math.random()*35);
+                    var t = cards[a];
+                    cards[a] = cards[b];
+                    cards[b]=t;
+                }
+                this.setState({cards:cards});
+
+            }
+
+            goBack(){ 
+                this.setState({page:0});
+            }
+
+            checkCards(){
+                var a=this.cards_opened[0];
+                var b=this.cards_opened[1];
+                this.cards_opened=[];
+                if(a.props.t==b.props.t){
+                    a.setState({s:2});
+                    b.setState({s:2});
+                    this.cards_count -= 2;
+                }else{
+                    a.setState({s:0});
+                    b.setState({s:0});
+                }
+                if(this.cards_count==0){
+                    this.setState({page:2});
+                }
+            }
+
+        };
+    
+        function Page0(props){
+            return <div className="d-flex">
+                    <button className="btn btn-outline-primary border border-3 border-primary m-auto fw-bold" onClick={()=>props.game.start()}>StartGame</button>
+                    <a href="index.html" className="btn btn-outline-danger border border-3 border-danger m-auto fw-bold">backHome</a>
+                </div> ;
+
+                
+            }
+
+        function Page1(props){
+            return <div>
+                
+                <div class="row mb-4">
+                    {props.cards}
+                </div>
+                <div class="d-flex">
+                    <button className="btn btn-outline-danger border border-3 border-danger m-auto px-5 fw-bold" onClick={()=>props.game.goBack()} >Exit</button>
+                </div>
+                
+            </div>
+        }
+
+        function Page2(props){
+            return <div>
+                    <h1 className="text-center mb-4">You won this Game!!!</h1>
+                    <div class="d-flex">
+                        <button className="btn btn-outline-warning border border-3 border-warning fw-bold m-auto px-5" onClick={()=>props.game.goBack()}>Ok</button>
+                    </div>
+                </div>
+        }
+      
+        class Card extends React.Component {
+            constructor(){
+                super();
+                this.state = {s:0};
+            }
+            render(){
+                var m;
+                if(this.state.s==0)
+                    m = <img src="work1_img/0.png" onClick={()=>this.imgClick()} width="80px" height="80px" className="m-auto"></img>;
+                else if (this.state.s==1)
+                    m = <img src={"work1_img/"+this.props.t+".png"} width="80px" height="80px" className="m-auto"></img>;
+
+                return <div className="col-2 d-flex">{m}</div> ;
+            }   
+
+            imgClick(){
+                var g = this.props.game;
+                if(g.cards_opened.length<2){
+                    this.setState({s:1});
+                    g.cards_opened.push(this);
+                    if(g.cards_opened.length==2){
+                        setTimeout( ()=>g.checkCards() , 500 );
+                    }
+
+                }
+                
+                
+            }
+        }
+
+      ReactDOM.render(<Game />, document.getElementById('app'))
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  </body>
+</html>
